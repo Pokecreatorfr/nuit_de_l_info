@@ -1,0 +1,39 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Grass.tsx": {
+            "dynamicWrapping": true,
+            "scaleInEditor": 0.75
+        },
+        "body.tsx": {
+            "dynamicWrapping": false,
+            "scaleInEditor": 1
+        },
+        "canal.tsx": {
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/mathe/Documents/GitHub/nuit_de_l_info/graphics/tilesets",
+    "map.height": 32,
+    "map.lastUsedFormat": "tmx",
+    "map.renderOrder": "3",
+    "map.width": 32,
+    "openFiles": [
+    ],
+    "project": "sans titre.tiled-project",
+    "recentFiles": [
+        "canal.tsx",
+        "Grass.tsx",
+        "body.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.transparentColor": "#22b14c",
+    "tileset.type": 1,
+    "tileset.useTransparentColor": true
+}
