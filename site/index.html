@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,10 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     section {
-      width: 100%;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -37,33 +35,70 @@
       font-size: 1.5rem;
     }
 
-    /* Section principale */
-    .main {
-      background: #f9f9f9;
-      position: relative;
+    /* Menu de navigation */
+    .choix {
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 10;
+    }
+
+    .choix h1 {
+      font-family: Verdana, sans-serif;
+      font-style: italic;
+      color: white;
+      margin: 0;
+    }
+
+    ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid white;
+      margin: 0 10px;
+      text-transform: uppercase;
+    }
+
+    ul li a:hover,
+    ul li.active a {
+      background: white;
+      color: black;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
     }
 
     /* Conteneur interactif */
-    .container {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
+    .main {
+      background: #f9f9f9;
     }
 
-    .main-content {
+    .container {
+      display: flex;
+      position: relative;
       width: 100%;
       height: 100%;
-      transition: transform 0.5s ease;
-      position: relative;
     }
 
     .image {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Ajuste l'image pour la contenir dans l'écran */
-      transition: transform 0.5s ease, transform-origin 0.5s ease;
+      object-fit: contain;
+      transition: transform 0.5s ease;
     }
 
     /* Points interactifs */
@@ -73,20 +108,19 @@
       background-repeat: no-repeat;
       cursor: pointer;
       transform: translate(-50%, -50%);
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
     .point.hidden {
       opacity: 0;
       pointer-events: none;
-      transform: translate(-50%, -50%) scale(0);
     }
 
     /* Détails à droite */
     .details {
       position: absolute;
       top: 0;
-      right: -50%; /* Placé hors de l'écran par défaut */
+      right: -50%;
       width: 50%;
       height: 100%;
       background: #f0f0f0;
@@ -94,6 +128,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 20px;
+      box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
       transition: right 0.5s ease;
     }
 
@@ -106,7 +142,6 @@
       background: #333;
       color: white;
       padding: 2rem;
-      text-align: center;
     }
 
     .credits h2 {
@@ -116,180 +151,89 @@
     .credits p {
       font-size: 1rem;
     }
-
-    .choix {
-        background-image: url(./image/fond-bleu-new.jpg);
-        background-position: center;
-        height: 100px; /* Hauteur fixée pour rendre l'alignement plus clair */
-        width: 100%;
-        position: fixed;
-        z-index: 1;
-        display: flex; /* Ajout de flexbox */
-        justify-content: space-between; /* Aligne le contenu à gauche et à droite */
-        align-items: center; /* Centrage vertical */
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 0 20px; /* Ajout d'un peu d'espace autour */
-    }
-    
-    .titre {
-        font-family: Verdana;
-        font-style: italic;
-        color: white;
-        margin: 0; /* Supprime le margin supplémentaire */
-        display: block; /* Assure que le titre se comporte comme un bloc */
-    }
-    
-    ul {
-        list-style: none;
-        display: flex;
-        margin: 0; /* Supprime le margin par défaut */
-        padding: 0; /* Supprime le padding par défaut */
-    }
-    
-    ul li a {
-        color: white;
-        text-decoration: none;
-        padding: 10px 20px;
-        text-transform: uppercase;
-        border: 1px solid white;
-        margin: 0 10px; /* Ajuste l'espacement entre les liens */
-    }
-    
-    ul li a:hover {
-        background: white;
-        color: #000;
-    }
-    
-    ul li.active a {
-        background: white;
-        color: black;
-    }
-
-    .logo {
-        height: 60px; /* Ajustez la taille du logo */
-        width: auto; /* Maintient les proportions */
-        margin-right: 31px; /* Espacement entre la liste et le logo */
-    }
-
   </style>
 </head>
 <body>
-    <div class="choix">
-        <h1 class="titre">L'écologie et des trucs comme ça</h1>
-        <ul>
-           <li class="active">
-              <a href="#">Accueil</a>
-           </li>
-           <li>
-              <a href="#">Crédit</a>
-           </li>
-           <li>
-              <a href="date_graphique/index.html">Login</a>
-           </li>
-        </ul>
-        <img src="logo.png" alt="Logo" class="logo">
-    </div>
+  <div class="choix">
+    <h1>L'écologie et des choses fascinantes</h1>
+    <ul>
+      <li class="active"><a href="#">Accueil</a></li>
+      <li><a href="#">Crédits</a></li>
+      <li><a href="date_graphique/index.html">Connexion</a></li>
+    </ul>
+    <img src="logo.png" alt="Logo" class="logo">
+  </div>
+
   <!-- Section d'introduction -->
   <section class="intro">
     <div>
       <h1>Bienvenue dans l'exploration interactive</h1>
-      <p>Faites défiler pour en savoir plus.</p>
+      <p>Découvrez les secrets du corps humain et du monde qui nous entoure.</p>
     </div>
   </section>
 
-  <!-- Section avec le corps humain interactif -->
+  <!-- Section interactive -->
   <section class="main">
-    <div class="container" id="container">
-      <div class="main-content" id="mainContent">
-        <img src="corps_humain.png" alt="Image Interactive" class="image" id="image">
-        <div 
-          class="point point-1" 
-          style="top: 28%; left: 52%; background-image: url('point1.png'); width: 40px; height: 40px;" 
-          data-zoom="52% 30%" 
-          data-details="Circulation sanguine : Le cœur humain est une pompe musculaire essentielle à la circulation sanguine. Il fonctionne de manière rythmique et coordonnée pour assurer la distribution de sang oxygéné à travers le corps et le retour du sang désoxygéné vers les poumons.
-Le principal rôle de la circulation sanguine est de transporter le sang désoxygéné du cœur aux poumons pour l'oxygénation, puis retourne le sang oxygéné au cœur.
-Les nutriments transportés par le sang sont essentiels pour tous les organes du corps humains.                                                                                                
-Circulation thermohaline : Phénomène océanique qui régule la distribution globale de la chaleur et des nutriments dans les océans. Les courants océaniques résultant de la circulation thermohaline sont nécessaires à la distribution des nutriments et de la vie marine. Les conséquences d'un arrêt de la circulation thermohaline seraient catastrophiques pour les espèces marines. Des recherches suggèrent que cette circulation est déjà perturbée par le changement climatique provoqué par l'homme.">
-        </div>
-        <div 
-          class="point point-2" 
-          style="top: 35%; left: 50%; background-image: url('point2.png'); width: 100px; height: 100px;" 
-          data-zoom="50% 38%" 
-          data-details="Poumons chez l'homme : Lors de l'inspiration, l'oxygène est absorbé par les alvéoles, de minuscules poches d'air desservies par les bronchioles. Il y en a plus de cent millions dans chaque poumon. C'est elles qui sont chargées de l'échanges gazeux entre l'air et la circulation sanguine.
-L'oxygène est redistribué dans les capillaires pulmonaires, qui le relâche dans le sang. La circulation nourrit les cellules de ton corps avec des nutriments et de l'oxygène. Une fois que l'oxygène à été utilisé par les cellules, le CO2 est expulsé dans le sens inverse, depuis le sang jusqu'aux capillaires, puis aux alvéoles ; il est expulsé lors de l'expiration.">
-        </div>
-        <div 
-          class="point point-3" 
-          style="top: 47%; left: 52%; background-image: url('point3.png'); width: 60px; height: 60px;" 
-          data-zoom="52% 49%" 
-          data-details="Détails sur les jambes">
-        </div>
+    <div class="container">
+      <img src="corps_humain.png" alt="Image Interactive" class="image" id="image">
+      <div 
+        class="point point-1" 
+        style="top: 28%; left: 52%; width: 40px; height: 40px;" 
+        data-zoom="52% 30%" 
+        data-details="La circulation sanguine est le moteur de notre vitalité. Elle transporte l'oxygène et les nutriments dans tout le corps, tout en éliminant les déchets. C'est aussi un système essentiel pour la régulation thermique.">
       </div>
-      <div class="details" id="details">
-        Cliquez sur un point pour voir ses détails.
+      <div 
+        class="point point-2" 
+        style="top: 35%; left: 50%; width: 60px; height: 60px;" 
+        data-zoom="50% 38%" 
+        data-details="Les poumons sont les gardiens de la respiration. Chaque inspiration est une symphonie d'échanges gazeux qui alimentent nos cellules en oxygène.">
       </div>
+      <div 
+        class="point point-3" 
+        style="top: 47%; left: 52%; width: 50px; height: 50px;" 
+        data-zoom="52% 49%" 
+        data-details="Les jambes nous portent, mais elles sont aussi le théâtre de nombreux échanges sanguins complexes, assurant l'équilibre et la force.">
+      </div>
+      <div class="details" id="details">Cliquez sur un point pour explorer.</div>
     </div>
   </section>
 
   <!-- Section des crédits -->
   <section class="credits">
     <h2>Crédits</h2>
-    <li></li>
-    <p>Créé par l'esprit du rinocéros blanc. Images et contenus protégés par copyright (pas du tout mais ça claque en vrai).</p>
+    <p>Projet réalisé avec passion et curiosité. Images et textes inspirés par la beauté du vivant.</p>
   </section>
 
   <script>
     const image = document.getElementById('image');
     const points = document.querySelectorAll('.point');
     const details = document.getElementById('details');
-    const mainContent = document.getElementById('mainContent');
     let zoomedPoint = null;
 
     points.forEach(point => {
-      point.addEventListener('click', (event) => {
-        event.stopPropagation();
+      point.addEventListener('click', () => {
         const zoomOrigin = point.getAttribute('data-zoom');
         const detailText = point.getAttribute('data-details');
 
         if (zoomedPoint === point) {
           resetZoom();
         } else {
-          // Zoom et décalage
           image.style.transformOrigin = zoomOrigin;
           image.style.transform = 'scale(2)';
-          mainContent.style.transform = 'translateX(-25%)'; // Décale vers la gauche
-
-          // Afficher les détails
           details.textContent = detailText;
           details.classList.add('visible');
-
-          // Masquer les autres points sauf celui cliqué
-          points.forEach(p => {
-            if (p !== point) {
-              p.classList.add('hidden');
-            }
-          });
-
+          points.forEach(p => p !== point && p.classList.add('hidden'));
           zoomedPoint = point;
         }
       });
     });
 
-    mainContent.addEventListener('click', () => {
-      resetZoom();
-    });
+    image.addEventListener('click', resetZoom);
 
     function resetZoom() {
-      // Réinitialise le zoom et le décalage
       image.style.transform = 'scale(1)';
-      mainContent.style.transform = 'translateX(0)';
-
-      // Cacher les détails
       details.classList.remove('visible');
-
-      // Réafficher tous les points
       points.forEach(p => p.classList.remove('hidden'));
-
       zoomedPoint = null;
     }
   </script>
