@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="function.js" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repère gradué 2D interactif</title>
+  
+</head>
+    <body>
+        <h1>Rentrez votre date de naissance</h1>
+        <div class="container">
+            <!-- Graduation X -->
+            <div class="ruler-x">
+              <span>1624</span>
+              <span>1664</span>
+              <span>1704</span>
+              <span>1744</span>
+              <span>1784</span>
+              <span>1824</span>
+              <span>1864</span>
+              <span>1904</span>
+              <span>1944</span>
+              <span>1984</span>
+              <span>2024</span>
+            </div>
+            <!-- Graduation Y -->
+            <div class="ruler-y">
+              <span>365</span>
+              <span>328</span>
+              <span>292</span>
+              <span>255</span>
+              <span>219</span>
+              <span>182</span>
+              <span>146</span>
+              <span>109</span>
+              <span>73</span>
+              <span>36</span>
+              <span>0</span>
+            </div>
+        <!-- Grille interactive -->
+        <div class="grid" id="grid">
+            <div class="marker" id="marker"></div>
+        </div>
+        <div class="value" id="value">Date : </div>
+
+        <div class="container">
+            <!-- Liste des caractères -->
+            <div class="ascii-list" id="asciiList"></div>
+            <!-- Curseur -->
+            <input type="range" id="letter_side" max="512">
+        </div>
+        <button class="button" onclick="selection()"> select </button>
+        <div class="value" id="value3"> Nom: </div>
+
+        <a href="../index.html"> enregistrer</a>
+    </body>
+</html>
